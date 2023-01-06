@@ -1,0 +1,189 @@
+/* 
+ * Main style definitions for the timetable website.
+ * Assignment 5, CSCI 1170, Winter 2022
+ * Starter code provided by Dr. Raghav V. Sampangi
+ */
+
+ /* General body styling, body set up as a grid container */
+body {
+	width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, auto);
+	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page banner styling, set to apper on the top row */
+.pg-banner {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	border-bottom: 5px solid steelblue;
+}
+.header-container {
+	padding: 0 0.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Page footer styling, set to apper on the bottom row */
+.pg-footer {
+	padding: 0 0.5em;
+	grid-row: -2/-1;
+	grid-column: 1/-1;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-top: 1px solid gold;
+	font-size: smaller;
+}
+
+/* Navigation elements - primary (main nav in the banner), secondary (smaller nav in the banner) and footer nav. */
+.primary-nav {
+	display: flex;
+}
+.primary-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.primary-nav > a:hover,
+.primary-nav > a:active {
+	color: maroon;
+}
+
+.secondary-nav {
+	background-color: #707372;
+	color: white;
+	font-size: smaller;
+	display: flex;
+	justify-content: flex-end;
+}
+.secondary-nav > a {
+	margin: 0.5em 1em 0.5em 0;
+	color: white;
+	text-decoration: none;
+}
+.secondary-nav > a:hover,
+.secondary-nav > a:active {
+	color: gold;
+}
+
+.footer-nav {
+	display: flex;
+}
+.footer-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.footer-nav > a:hover,
+.footer-nav > a:active {
+	color: maroon;
+}
+
+
+/* Main content container to include all the courses */
+.container {
+	margin: 10px;
+	min-height: 300px;
+
+	grid-column: 1/5;
+	grid-row: 3/4;
+
+	/* Add your styles for the Main container here */
+}
+
+
+/* Search form styling */
+.search-bar {
+	grid-row: 2/3;
+	grid-column: 1/-1;
+}
+.search-form {
+	margin: 2em auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.search-form > input[type="text"] {
+	flex: 2;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+.search-form > label,
+.search-form > input[type="button"] {
+	flex: 1;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+
+
+/* Course "bag" styling */
+/* NOTE: RE-USE YOUR STYLING IMPLEMENTATION FOR A4 FOR THE COURSE SELECTION BAG 
+- USE YOUR CODE WITH CITATION BOTH HERE AND IN README */
+
+/* This assignment solution contains code re-used from A4 in this course. This code is used with Prof. Raghav Sampangi's permission. 
+This code is used as a starting point for my solution for A5. */
+
+.course-selection-bag {
+	background-color: steelblue;
+    color: white;
+    grid-column: 5/7;
+    align-content: baseline;
+    padding-left: 10px;
+}
+
+/* Course info boxes */
+.course-info {
+	gap: 9px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.course-offering-info {
+	background-color: lightyellow;
+    border: 1px dashed;
+    padding: 10px;
+}
+
+.paraClass_2{
+    font-style: italic;
+    font-size: small;
+}
+.paraClass_3{
+    font-style: normal;
+    font-size: small;
+}
+
+
+/* Responsive styling */
+/* NOTE: RE-USE YOUR RESPONSIVE STYLE IMPLEMENTATION FROM A4 HERE
+- USE YOUR CODE WITH CITATION BOTH HERE AND IN README */
+
+/* This assignment solution contains code re-used from A4 in this course. This code is used with Prof. Raghav Sampangi's permission. 
+This code is used as a starting point for my solution for A5. */
+
+@media  screen and (max-width: 840px) {
+    body{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .header-container{
+        flex-direction: column;
+    }
+    .course-selection-bag{
+        grid-column: 1;
+    }
+    .container section{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .pg-footer{
+        grid-row: 5;
+        flex-direction: column;
+    }
+}
